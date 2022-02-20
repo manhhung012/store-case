@@ -4,23 +4,25 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="product")
 @Data
+@Entity
+@Table(name = "product")
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProduct;
+    private Long id;
 
-    @Column
+    @Column(name = "name_product")
     private String nameProduct;
 
-    @Column
+    @Column(name = "price")
     private Long price;
 
-    @Column
-    private Long idBrand;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Long brand;
 
-    @Column
-    private Long idCategories;
+    @ManyToOne
+    @JoinColumn(name = "categories_id")
+    private Long categories;
 }

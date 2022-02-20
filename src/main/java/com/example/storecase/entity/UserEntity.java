@@ -4,20 +4,20 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="user")
+@Table(name = "user")
 @Data
+@Entity
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUser;
+    private Long id;
 
-    @Column
+    @Column(name = "username")
     private String username;
 
-    @Column
+    @Column(name = "password")
     private String password;
 
-    @Column
+    @Column(name = "fullname")
     private String fullName;
 }

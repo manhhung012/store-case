@@ -2,22 +2,15 @@ package com.example.storecase.entity;
 
 import lombok.Data;
 
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Table(name = "checkout")
 @Entity
-@Table(name = "brand")
-public class BrandEntity {
+public class CheckoutEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column
-    private String name;
-
-    @OneToMany(mappedBy = "brand")
-    private List<ProductEntity> productBrand = new ArrayList<>();
 }
