@@ -1,8 +1,11 @@
 package com.example.storecase.entity;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -20,9 +23,12 @@ public class ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "brand_id")
-    private Long brand;
+    private BrandEntity brand;
 
     @ManyToOne
     @JoinColumn(name = "categories_id")
-    private Long categories;
+    private CategoriesEntity categories;
+
+    @ManyToMany(mappedBy = "listProduct")
+    private List<CheckoutEntity> listCheckout = new ArrayList<>();
 }
