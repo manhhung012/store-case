@@ -21,6 +21,9 @@ public class ProductEntity {
     @Column(name = "price")
     private Long price;
 
+    @Column(name = "img")
+    private String img;
+
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private BrandEntity brand;
