@@ -2,12 +2,14 @@ package com.example.storecase.services;
 
 import com.example.storecase.entity.CheckoutEntity;
 
-public interface CheckoutService {
-    CheckoutEntity createCheckout(CheckoutEntity checkout);
+import java.util.List;
 
-    boolean addProductToCheckout(Long idCheckout, Long idProduct);
+public interface CheckoutService {
+    boolean addCheckout(CheckoutEntity checkout);
 
     boolean removeProductOfCheckout(Long idCheckout, Long idProduct);
 
-    CheckoutEntity getCheckouById(Long idCheckout);
+    CheckoutEntity getCheckoutById(Long idCheckout);
+
+    List<CheckoutEntity> getListCheckoutOfUser(Long idUser);
 }

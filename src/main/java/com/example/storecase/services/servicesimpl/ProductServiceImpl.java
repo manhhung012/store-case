@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductEntity> getProductByCategory(Long idCategory) {
-        return productDao.findByIdCategories(idCategory);
+        return productDao.findByCategories(idCategory);
     }
 
     @Override

@@ -14,6 +14,7 @@ import java.util.Optional;
 public class CategoriesServiceImpl implements CategoriesService {
     @Autowired
     CategoriesDao categoriesDao;
+
     @Override
     public List<CategoriesEntity> getAllCategory() {
         return categoriesDao.findAll();
@@ -21,8 +22,8 @@ public class CategoriesServiceImpl implements CategoriesService {
 
     @Override
     public boolean createCategory(CategoriesEntity category) {
-        Optional<CategoriesEntity> listIdCategory= categoriesDao.findById(category.getId());
-        if(listIdCategory.isPresent()){
+        Optional<CategoriesEntity> lisOfCategory= categoriesDao.findById(category.getId());
+        if(lisOfCategory.isPresent()){
             return false;
         } else {
             categoriesDao.save(category);

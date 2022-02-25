@@ -31,7 +31,4 @@ public class ProductEntity {
     @ManyToOne
     @JoinColumn(name = "categories_id")
     private CategoriesEntity categories;
-
-    @ManyToMany(mappedBy = "listProduct")
-    private List<CheckoutEntity> listCheckout = new ArrayList<>();
 }

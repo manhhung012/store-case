@@ -1,7 +1,6 @@
 package com.example.storecase.entity;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
@@ -21,8 +20,4 @@ public class UserEntity {
 
     @Column(name = "fullname")
     private String fullName;
-
-    @OneToOne
-    @JoinColumn(name = "checkout_id")
-    private CheckoutEntity checkout;
 }
